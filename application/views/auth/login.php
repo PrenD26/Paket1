@@ -28,10 +28,10 @@
                         <h4 class="text-dark font-weight-normal mt-5 text-center">Welcome to <span class="font-weight-bold">Peduli Diri</span></h4>
                         <!-- <p class="text-muted">Before you get started, you must login or register if you don't already have an account. Sebelum </p> -->
                         <br>
-                        <form method="POST" action="<?=base_url('auth/login')?>" class="needs-validation" novalidate="">
+                        <form method="POST" action="<?= base_url('auth/login') ?>" class="needs-validation" novalidate="">
                             <div class="form-group">
                                 <label for="nik">NIK</label>
-                                <input id="nik" type="text" class="form-control" name="nik" tabindex="1" required autofocus>
+                                <input id="nik" type="text" value="<?= set_value('nik') ?>" class="form-control" name="nik" tabindex="1" required autofocus>
                                 <div class="invalid-feedback">
                                     Tolong Isi NIK anda
                                 </div>
@@ -57,9 +57,9 @@
 
                             <div class="mt-5 text-center">
                                 <div class="mb-5 text-danger">
-                                    <?=$this->session->flashdata('amogus')?>
+                                    <?= $this->session->flashdata('amogus') ?>
                                 </div>
-                                Belum Punya Akun? <a href="<?=base_url('auth/register')?>">Buat Akun</a>
+                                Belum Punya Akun? <a href="<?= base_url('auth/register') ?>">Buat Akun</a>
                             </div>
                         </form>
 
