@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0-rc1
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 05, 2022 at 08:22 AM
+-- Generation Time: Mar 05, 2022 at 11:34 AM
 -- Server version: 8.0.28
 -- PHP Version: 8.0.15
 
@@ -36,6 +36,13 @@ CREATE TABLE `riwayat` (
   `suhu_tubuh` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Dumping data for table `riwayat`
+--
+
+INSERT INTO `riwayat` (`id_perjalanan`, `id_user`, `tanggal`, `waktu`, `lokasi`, `suhu_tubuh`) VALUES
+(1, 14, '2022-03-05', '15:32:00', 'gunung bromo', 35);
+
 -- --------------------------------------------------------
 
 --
@@ -46,10 +53,10 @@ CREATE TABLE `user` (
   `id_user` int NOT NULL,
   `nama` varchar(50) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `nik` int NOT NULL,
+  `nik` varchar(16) NOT NULL,
   `tanggal_lahir` date NOT NULL,
   `jk` varchar(30) NOT NULL,
-  `no_telepon` int NOT NULL,
+  `no_telepon` varchar(16) NOT NULL,
   `alamat` text NOT NULL,
   `umur` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -59,7 +66,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nama`, `email`, `nik`, `tanggal_lahir`, `jk`, `no_telepon`, `alamat`, `umur`) VALUES
-(14, 'FRENDY WAHYU RAMADHANY', 'frendyrahma26@gmail.com', 2147483647, '2022-03-05', 'Laki-Laki', 2147483647, 'Jalan Raya Ngantru No 99,Desa Ngantru,Kec Ngantru,Kab Tulungagung', 0);
+(17, 'FRENDY WAHYU RAMADHANY', 'frendyrahma26@gmail.com', '1111111111111111', '2003-10-03', 'Laki-Laki', '0895710518585', 'Jalan Raya Ngantru No 99,Desa Ngantru,Kec Ngantru,Kab Tulungagung', 18);
 
 --
 -- Indexes for dumped tables
@@ -85,13 +92,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `riwayat`
 --
 ALTER TABLE `riwayat`
-  MODIFY `id_perjalanan` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_perjalanan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
